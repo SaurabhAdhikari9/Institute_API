@@ -2,6 +2,7 @@
 
 namespace institute.Models
 {
+
     public class Student
     {
         [Required]

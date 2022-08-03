@@ -56,7 +56,20 @@ namespace institute.Controllers
             return NoContent();
         }
 
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var teacherToDelet = await _context.Teachers.FindAsync(id);
+            if(teacherToDelet == null) return BadRequest();
 
+            _context.Teachers.Remove(teacherToDelet);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+
+        }
 
 
 

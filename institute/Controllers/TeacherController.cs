@@ -11,5 +11,17 @@ namespace institute.Controllers
     [ApiController]
     public class TeacherController : ControllerBase
     {
+        private readonly TeacherDbContext _context;
+        
+        public TeacherController(TeacherDbContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<Teacher>> Get()
+        {
+            return await _context.Teachers.ToListAsync();
+        }
     }
 }

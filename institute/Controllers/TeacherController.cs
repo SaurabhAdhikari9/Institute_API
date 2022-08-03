@@ -36,5 +36,30 @@ namespace institute.Controllers
 
         }
 
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public async Task<IActionResult> Create(Teacher teacher)
+        {
+            await _context.Teachers.AddAsync(teacher);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetById), new { id = teacher.Id}, teacher);
+        }
+
+        [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Update(int id, Teacher teacher)
+        {
+            if(id != teacher.Id) return BadRequest();
+            _context.Entry(teacher).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+
+
+
+
+
     }
 }

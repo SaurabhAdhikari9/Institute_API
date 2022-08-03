@@ -4,6 +4,7 @@ namespace institute.Models
 {
     public class Teacher
     {
+
         [Required]
         public int Id { get; set; }
         public string Name { get; set; }

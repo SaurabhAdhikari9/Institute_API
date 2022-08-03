@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using institute.Models;
+
 namespace institute.Data
 {
     public class TeacherDbContext :DbContext

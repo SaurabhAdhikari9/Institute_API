@@ -9,8 +9,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Using local storage
+// Using local storage for student
 builder.Services.AddDbContext<StudentDbContext>(opt =>
+opt.UseInMemoryDatabase("Data"));
+
+// Using local storage for teacher
+builder.Services.AddDbContext<TeacherDbContext>(opt =>
 opt.UseInMemoryDatabase("Data"));
 
 var app = builder.Build();

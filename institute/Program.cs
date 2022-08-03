@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+// Using local storage
 builder.Services.AddDbContext<StudentDbContext>(opt =>
 opt.UseInMemoryDatabase("Data"));
 

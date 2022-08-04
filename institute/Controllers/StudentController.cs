@@ -5,6 +5,8 @@ using institute.Data;
 using institute.Models;
 
 
+
+
 namespace institute.Controllers
 {
     [Route("api/[controller]")]
@@ -18,9 +20,12 @@ namespace institute.Controllers
             _context = context;
         }
 
+        
         [HttpGet]
         public async Task<IEnumerable<Student>> Get()
         {
+            
+            
             return await _context.Students.ToListAsync();
         }
 

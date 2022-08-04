@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\saura\\Desktop\\New folder\\Institute_API\\institute\\institute.csproj": {}
+    "C:\\Users\\saura\\Desktop\\New folder\\New folder\\Institute_API\\institute\\institute.csproj": {}
   },
   "projects": {
-    "C:\\Users\\saura\\Desktop\\New folder\\Institute_API\\institute\\institute.csproj": {
+    "C:\\Users\\saura\\Desktop\\New folder\\New folder\\Institute_API\\institute\\institute.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\saura\\Desktop\\New folder\\Institute_API\\institute\\institute.csproj",
+        "projectUniqueName": "C:\\Users\\saura\\Desktop\\New folder\\New folder\\Institute_API\\institute\\institute.csproj",
         "projectName": "institute",
-        "projectPath": "C:\\Users\\saura\\Desktop\\New folder\\Institute_API\\institute\\institute.csproj",
+        "projectPath": "C:\\Users\\saura\\Desktop\\New folder\\New folder\\Institute_API\\institute\\institute.csproj",
         "packagesPath": "C:\\Users\\saura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\saura\\Desktop\\New folder\\Institute_API\\institute\\obj\\",
+        "outputPath": "C:\\Users\\saura\\Desktop\\New folder\\New folder\\Institute_API\\institute\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\saura\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.7, )"
@@ -57,6 +61,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.7, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.30, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.1.11, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

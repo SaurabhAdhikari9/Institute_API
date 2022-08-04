@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
 using institute.Data;
+using System.Diagnostics;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -26,6 +29,31 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+string connectionString = $"server=127.0.0.1;Port=3306;uid = root; pwd = root; database = mydata";
+
+MySqlConnection connObj = new MySqlConnection(connectionString);
+
+connObj.Open();
+
+string query = "select * from students";
+Console.WriteLine(query);
+MySqlCommand cmd = new MySqlCommand(query, connObj);
+
+
+MySqlDataReader reader = cmd.ExecuteReader();
+
+while (reader.Read())
+{
+    object[] a = new object[5];
+    reader.GetValues(a);
+    for(int i = 0;i< a.Length;i++)
+    {
+        Trace.WriteLine(a[i].ToString());
+    }
+}
+
+
+    
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
